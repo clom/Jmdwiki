@@ -19,3 +19,6 @@ server.pid
 .cache
 /lib/
 /db
+
+# Mac
+.DS_Store
