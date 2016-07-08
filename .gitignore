@@ -1,0 +1,24 @@
+logs
+target
+/.idea
+/.idea_modules
+/.classpath
+/.project
+/.settings
+/RUNNING_PID
+
+*.lock
+.sbtserver
+/project/target
+/modules
+tmp/
+test-result
+server.pid
+*.eml
+/dist/
+.cache
+/lib/
+/db
+
+# Mac
+.DS_Store
