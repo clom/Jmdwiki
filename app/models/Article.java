@@ -8,11 +8,11 @@ import com.avaje.ebean.*;
 public class Article extends Model {
 
   @Id
-  public int articleId;
-  public int contentId;
-  public String title;
-  public String content;
-  public Timestamp timestamp;
+  private int articleId;
+  private int contentId;
+  private String title;
+  private String content;
+  private Timestamp timestamp;
 
   public Article() {
 
