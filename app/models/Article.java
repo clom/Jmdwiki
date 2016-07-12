@@ -15,34 +15,31 @@ public class Article extends Model {
   private Timestamp timestamp;
 
   public Article() {
-
   }
 
   public Article(int articleId) {
-
   }
 
   public Article(int articleId, int contentId) {
-
   }
 
   public String getTitle() {
-
+    return title;
   }
 
   public String getContent() {
-
+    return content;
   }
 
   public int getArticleId() {
-
+    return articleId;
   }
 
   public void setTitle(String title) {
-
+    this.title = title;
   }
 
   public void setContent(String content) {
-
+    this.content = content;
   }
 }
