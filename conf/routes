@@ -12,18 +12,19 @@ GET    /message         controllers.AsyncController.message
 # Map static resources from the /public folder to the /assets URL path
 GET    /assets/*file    controllers.Assets.versioned(path="/public", file: Asset)
 
-GET    /top             controllers.TopController.showTop
+
+
 
 
 POST    /user/create     controllers.UserController.create
 
 GET     /user/new/       controllers.UserController.new
 
-DELETE  /user/id/destroy controllers.UserController.destroy
+DELETE  /user/:id/destroy controllers.UserController.destroy
 
-PUT     /user/id/update  controllers.UserController.update
+PUT     /user/:id/update  controllers.UserController.update
 
-GET     /user/id/edit    controllers.UserController.edit
+GET     /user/:id/edit    controllers.UserController.edit
 
 
 
@@ -41,11 +42,11 @@ POST    /article/create     controllers.ArticleController.create
 
 GET     /article/new/       controllers.ArticleController.new
 
-GET     /article/id/show    controllers.ArticleController.show
+GET     /article/:id/show    controllers.ArticleController.show
 
-DELETE  /article/id/destroy controllers.ArticleController.destroy
+DELETE  /article/:id/destroy controllers.ArticleController.destroy
 
-PUT     /article/id/update  controllers.ArticleController.update
+PUT     /article/:id/update  controllers.ArticleController.update
 
-GET     /article/id/edit    controllers.ArticleController.edit
+GET     /article/:id/edit    controllers.ArticleController.edit
 
