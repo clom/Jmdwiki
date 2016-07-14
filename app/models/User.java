@@ -7,8 +7,10 @@ package models;
 
 
 import com.avaje.ebean.Model;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Entity
 public class User extends Model {
@@ -16,8 +18,10 @@ public class User extends Model {
     @Id
     public Long id;
 
+    @NotNull
     public String name;
 
+    @NotNull
     public String passwordDigest;
 
     public User() {
