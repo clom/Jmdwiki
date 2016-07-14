@@ -30,7 +30,7 @@ public class UserTest {
     }
 
     @Test
-    public void UserAddTest02(){
+    public void UserAddTest02() throws Exception{
         User actual = new User("mayok", "hoge");
         actual.save();
         assertNotNull(actual.name);
@@ -38,7 +38,7 @@ public class UserTest {
     }
 
     @Test
-    public void UserAddTest03(){
+    public void UserAddTest03() throws Exception{
         User actual = new User("mayok", null);
         actual.save();
         assertNotNull(actual.name);
@@ -46,7 +46,7 @@ public class UserTest {
     }
 
     @Test
-    public void UserAddTest04(){
+    public void UserAddTest04() throws Exception{
         User actual = new User(null, "hoge");
         actual.save();
         assertNotNull(actual.name);
@@ -54,7 +54,7 @@ public class UserTest {
     }
 
     @Test
-    public void UserAddTest05(){
+    public void UserAddTest05() throws Exception{
         User actual = new User(null, null);
         actual.save();
         assertNotNull(actual.name);
@@ -62,7 +62,7 @@ public class UserTest {
     }
 
     @Test
-    public void UserSelectTest01(){
+    public void UserSelectTest01() throws Exception{
         User actual = new User("mayok", "hoge");
         actual.save();
         User expect = User.finder.where().eq("user", "mayok").findUnique();
