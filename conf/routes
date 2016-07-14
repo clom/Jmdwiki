@@ -18,13 +18,13 @@ GET    /assets/*file    controllers.Assets.versioned(path="/public", file: Asset
 
 POST    /user/create     controllers.UserController.create
 
-GET     /user/new/       controllers.UserController.new
+GET     /user/new        controllers.UserController.new
 
-DELETE  /user/:id/destroy controllers.UserController.destroy
+DELETE  /user/:id        controllers.UserController.destroy(id:Int)
 
-PUT     /user/:id/update  controllers.UserController.update
+PUT     /user/:id        controllers.UserController.update(id:Int)
 
-GET     /user/:id/edit    controllers.UserController.edit
+GET     /user/:id        controllers.UserController.edit(id:Int)
 
 
 
@@ -36,17 +36,17 @@ POST    /logout          controllers.LooutController.loout
 
 
 
-GET     /article/index      controllers.ArticleController.index
+GET     /article/index       controllers.ArticleController.index
 
-POST    /article/create     controllers.ArticleController.create
+POST    /article/create      controllers.ArticleController.create
 
-GET     /article/new/       controllers.ArticleController.new
+GET     /article/new         controllers.ArticleController.new
 
-GET     /article/:id/show    controllers.ArticleController.show
+GET     /article/:id         controllers.ArticleController.show(id:Int)
 
-DELETE  /article/:id/destroy controllers.ArticleController.destroy
+DELETE  /article/:id         controllers.ArticleController.destroy(id:Int)
 
-PUT     /article/:id/update  controllers.ArticleController.update
+PUT     /article/:id         controllers.ArticleController.update(id:Int)
 
-GET     /article/:id/edit    controllers.ArticleController.edit
+GET     /article/:id         controllers.ArticleController.edit(id:Int)
 
