@@ -48,6 +48,6 @@ public class User extends Model {
         this.passwordDigest = passwordDigest;
     }
 
-    public static final Find<Long, String> finder = new Find<Long, String>(){};
+    public static final Find<Long, User> finder = new Find<Long, User>(){};
 
 }
