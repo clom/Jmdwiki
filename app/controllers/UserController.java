@@ -14,13 +14,13 @@ public class UserController extends Controller {
     return ok(create.render("create"));
   }
 
-  public Result edit() {
+  public Result edit(Int id) {
     return ok(edit.render("edit"));
   }
-  public Result update() {
+  public Result update(Int id) {
     return ok(update.render("update"));
   }
 
-  public Result destroy() {
+  public Result destroy(Int id) {
     return ok(destroy.render("destroy"));
   }
