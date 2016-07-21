@@ -4,16 +4,14 @@
 # --- !Ups
 
 create table user (
-  id                            bigint not null,
+  id                            bigint auto_increment not null,
   name                          varchar(255) not null,
   password_digest               varchar(255) not null,
   constraint pk_user primary key (id)
 );
-create sequence user_seq;
 
 
 # --- !Downs
 
 drop table if exists user;
-drop sequence if exists user_seq;
 
