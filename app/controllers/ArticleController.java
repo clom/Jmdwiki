@@ -17,8 +17,8 @@ public class ArticleController extends Controller {
     return ok(edit.render("edit"));
   }
 
-  public Result new() {
-    return ok(new.render("new"));
+  public Result add() {
+    return ok(add.render("new"));
   }
 
   public Result update(Int id) {
