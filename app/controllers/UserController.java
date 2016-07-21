@@ -11,17 +11,21 @@ public class UserController extends Controller {
   }
 
   public Result create() {
-      return ok();
+    return ok();
   }
 
   public Result edit(int id) {
     return ok(user_edit.render("article_edit"));
   }
+
+  public Result create() {
+  }
+
   public Result update(int id) {
-      return ok();
+    return ok();
   }
 
   public Result destroy(int id) {
-      return ok();
+    return ok();
   }
 }
