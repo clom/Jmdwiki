@@ -27,7 +27,12 @@
 
         @* And here's where we render the `Html` object containing
          * the page content. *@
-        @content
+
+        <div id="main">
+          <div class="container">
+            @content
+          </div>
+        </div>
 
         @common.footer()
     </body>
