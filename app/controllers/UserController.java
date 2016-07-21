@@ -24,3 +24,4 @@ public class UserController extends Controller {
   public Result destroy(Int id) {
     return ok(destroy.render("destroy"));
   }
+}
