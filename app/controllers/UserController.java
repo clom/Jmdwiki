@@ -10,15 +10,12 @@ public class UserController extends Controller {
     return ok(user_add.render("new"));
   }
 
-  public Result create() {
-    return ok();
-  }
-
   public Result edit(int id) {
     return ok(user_edit.render("article_edit"));
   }
 
   public Result create() {
+    return ok();
   }
 
   public Result update(int id) {
