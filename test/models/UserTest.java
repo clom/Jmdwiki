@@ -1,6 +1,5 @@
 package models;
 
-import com.avaje.ebean.Ebean;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -95,7 +94,7 @@ public class UserTest {
 
     @Test
     public void UserSelectTest01() throws Exception{
-      running(fakeApplication(), new Runnable() {
+      running(fakeApplication(inMemoryDatabase()), new Runnable() {
         public void run() {
             User actual = new User("mayok", "hoge");
             actual.save();
