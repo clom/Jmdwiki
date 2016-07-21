@@ -10,7 +10,7 @@ public class ArticleController extends Controller {
   }
 
   public Result show(int id) {
-    return ok(show.render("TestPage", "hoge"));
+    return ok(show.render("show"));
   }
 
   public Result edit(int id) {
