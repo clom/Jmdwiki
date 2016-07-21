@@ -4,7 +4,7 @@ import play.mvc.*;
 
 import views.html.*;
 
-public class HomeController extends Controller {
+public class ArticleController extends Controller {
   public Result index() {
     return ok(index.render("index"));
   }
@@ -17,8 +17,8 @@ public class HomeController extends Controller {
     return ok(edit.render("edit"));
   }
 
-  public Result new() {
-    return ok(new.render("new"));
+  public Result add() {
+    return ok(add.render("new"));
   }
 
   public Result update(Int id) {

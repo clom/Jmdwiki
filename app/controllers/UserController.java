@@ -6,8 +6,8 @@ import views.html.*;
 
 public class UserController extends Controller {
 
-  public Result new() {
-    return ok(new.render("new"));
+  public Result add() {
+    return ok(add.render("new"));
   }
 
   public Result create() {
