@@ -14,27 +14,27 @@ public class ArticleController extends Controller {
   }
 
   public Result edit(int id) {
-    return ok(edit.render("edit"));
+    return ok(article_edit.render("edit"));
   }
 
   public Result add() {
-    return ok(add.render("new"));
+    return ok(article_add.render("new"));
   }
 
   public Result update(int id) {
-    return ok(update.render("update"));
+    return ok();
   }
 
   public Result destroy(int id) {
-    return ok(destroy.render("destroy"));
+    return ok();
   }
 
   public Result create() {
-    return ok(create.render("create"));
+    return ok();
   }
 
   public Result revert() {
-    return ok(revert.render("revert"));
+    return ok();
   }
 }
 

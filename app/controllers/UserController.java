@@ -7,21 +7,21 @@ import views.html.*;
 public class UserController extends Controller {
 
   public Result add() {
-    return ok(add.render("new"));
+    return ok(user_add.render("new"));
   }
 
   public Result create() {
-    return ok(create.render("create"));
+      return ok();
   }
 
   public Result edit(int id) {
-    return ok(edit.render("edit"));
+    return ok(user_edit.render("article_edit"));
   }
   public Result update(int id) {
-    return ok(update.render("update"));
+      return ok();
   }
 
   public Result destroy(int id) {
-    return ok(destroy.render("destroy"));
+      return ok();
   }
 }
