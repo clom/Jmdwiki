@@ -15,3 +15,4 @@ libraryDependencies ++= Seq(
   evolutions
 )
 
+javaOptions in Test += "-Dconfig.file=conf/application.test.conf"
