@@ -9,11 +9,11 @@ public class ArticleController extends Controller {
     return ok(index.render("index"));
   }
 
-  public Result show(Int id) {
+  public Result show(int id) {
     return ok(show.render("show"));
   }
 
-  public Result edit(Int id) {
+  public Result edit(int id) {
     return ok(edit.render("edit"));
   }
 
@@ -21,11 +21,11 @@ public class ArticleController extends Controller {
     return ok(add.render("new"));
   }
 
-  public Result update(Int id) {
+  public Result update(int id) {
     return ok(update.render("update"));
   }
 
-  public Result destroy(Int id) {
+  public Result destroy(int id) {
     return ok(destroy.render("destroy"));
   }
 
