@@ -3,10 +3,13 @@ package controllers;
 import play.mvc.*;
 
 import views.html.*;
+import models.Article;
+import java.util.*;
 
 public class ArticleController extends Controller {
   public Result index() {
-    return ok(index.render("index"));
+    List<Article> articles = Article.find.all();
+    return ok(article_index.render(articles));
   }
 
   public Result show(int id) {
