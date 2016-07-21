@@ -22,19 +22,15 @@ public class ArticleController extends Controller {
   }
 
   public Result update(int id) {
-    return ok(update.render("update"));
   }
 
   public Result destroy(int id) {
-    return ok(destroy.render("destroy"));
   }
 
   public Result create() {
-    return ok(create.render("create"));
   }
 
   public Result revert() {
-    return ok(revert.render("revert"));
   }
 }
 
