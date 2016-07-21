@@ -20,11 +20,11 @@ POST    /user                 controllers.UserController.create
 
 GET     /user/new             controllers.UserController.add
 
-DELETE  /user/:id             controllers.UserController.destroy(id:int)
+DELETE  /user/:id             controllers.UserController.destroy(id:Int)
 
-PUT     /user/:id             controllers.UserController.update(id:int)
+PUT     /user/:id             controllers.UserController.update(id:Int)
 
-GET     /user/:id/edit        controllers.UserController.edit(id:int)
+GET     /user/:id/edit        controllers.UserController.edit(id:Int)
 
 
 
@@ -42,11 +42,11 @@ POST    /article              controllers.ArticleController.create
 
 GET     /article/new          controllers.ArticleController.add
 
-GET     /article/:id          controllers.ArticleController.show(id:int)
+GET     /article/:id          controllers.ArticleController.show(id:Int)
 
-DELETE  /article/:id          controllers.ArticleController.destroy(id:int)
+DELETE  /article/:id          controllers.ArticleController.destroy(id:Int)
 
-PUT     /article/:id          controllers.ArticleController.update(id:int)
+PUT     /article/:id          controllers.ArticleController.update(id:Int)
 
-GET     /article/:id/edit     controllers.ArticleController.edit(id:int)
+GET     /article/:id/edit     controllers.ArticleController.edit(id:Int)
 
