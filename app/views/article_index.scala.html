@@ -6,8 +6,7 @@
 <ul>
   @articles.map { article =>
   <li>
-    @article.getTitle()
-    @article.getContent()
+    <a href="@routes.ArticleController.show(article.getArticleId())">@article.getTitle()</a>
   </li>
   }
 </ul>

@@ -42,7 +42,7 @@ POST    /article              controllers.ArticleController.create
 
 GET     /article/new          controllers.ArticleController.add
 
-GET     /article/:id          controllers.ArticleController.show(id:Int)
+GET     /article/:id          controllers.ArticleController.show(id:Long)
 
 DELETE  /article/:id          controllers.ArticleController.destroy(id:Int)
 

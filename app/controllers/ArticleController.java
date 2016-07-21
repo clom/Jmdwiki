@@ -12,7 +12,7 @@ public class ArticleController extends Controller {
     return ok(article_index.render(articles));
   }
 
-  public Result show(int id) {
+  public Result show(Long id) {
     return ok(show.render("show"));
   }
 
