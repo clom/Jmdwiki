@@ -10,16 +10,17 @@ public class UserController extends Controller {
     return ok(add.render("new"));
   }
 
-  public Result edit(Int id) {
+  public Result edit(int id) {
     return ok(edit.render("edit"));
   }
 
   public Result create() {
   }
 
-  public Result update(Int id) {
+  public Result update(int id) {
   }
 
-  public Result destroy(Int id) {
+  public Result destroy(int id) {
+
   }
 }
