@@ -20,7 +20,7 @@ public class Article extends Model {
   @Column(name="title")
   private String title;
   @NotNull
-  @Column(name="content")
+  @Column(name="content",columnDefinition = "TEXT")
   private String content;
   @UpdatedTimestamp
   @Column(name="modify_time")
