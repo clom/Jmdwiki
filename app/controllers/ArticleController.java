@@ -40,7 +40,7 @@ public class ArticleController extends Controller {
   public Result create() {
     Article article = formFactory.form(Article.class).bindFromRequest().get();
     article.save();
-    return ok();
+    return redirect("/article/" + article.getArticleId());
   }
 
   public Result revert() {
