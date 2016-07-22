@@ -1,4 +1,10 @@
-@(title: String)
+@(articleForm: Form[Article])
 
-@main(title) {
+@main("Jmdwiki") {
+	<h1>新規作成</h1>
+	@helper.form(action = routes.ArticleController.create()){
+	  @helper.inputText(articleForm("title"))
+	  @helper.textarea(articleForm("content"), 'rows -> 10, 'cols -> 50)
+		<button type="submit">作成</button>
+	}
 }
