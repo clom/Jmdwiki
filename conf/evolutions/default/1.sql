@@ -4,7 +4,7 @@
 # --- !Ups
 
 create table article (
-  article_id                    bigint auto_increment not null,
+  article_id                    integer auto_increment not null,
   title                         varchar(255) not null,
   content                       varchar(255) not null,
   modify_time                   datetime(6) not null,
