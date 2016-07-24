@@ -18,7 +18,7 @@ public class ArticleController extends Controller {
 
   public Result show(int id) {
     Article data = Article.find.where().eq("articleId", id).findUnique();
-    return ok(show.render(data.getTitle(), data.getContent().replaceAll("(\r\n|\r|\n)","\\r\\n")));
+    return ok(show.render(data.getTitle(), data.getContent().replaceAll("(\r\n|\r|\n)","\\\\r\\\\n")));
   }
 
   public Result edit(int id) {
