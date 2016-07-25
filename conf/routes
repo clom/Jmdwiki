@@ -50,5 +50,5 @@ PUT     /article/:id          controllers.ArticleController.update(id:Int)
 
 GET     /article/:id/edit     controllers.ArticleController.edit(id:Int)
 
-GET     /search/:name          controllers.ArticleController.search(name:String)
+GET     /search               controllers.ArticleController.search(name:String ?= "")
 
