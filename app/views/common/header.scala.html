@@ -9,7 +9,13 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Jmdwiki</a>
+        <a class="navbar-brand" href="@routes.ArticleController.index()">Jmdwiki</a>
+      </div>
+
+      <div class="collapse navbar-collapse">
+        <div class="navbar-right">
+          <span><a href="@routes.ArticleController.add()" class="navbar-brand">New</a></span>
+        </div>
       </div>
     </div>
   </nav>
