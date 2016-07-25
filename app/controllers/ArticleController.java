@@ -24,7 +24,9 @@ public class ArticleController extends Controller {
   }
 
   public Result edit(int id) {
-    return ok(article_edit.render("edit"));
+    Article data = Article.find.byId(id);
+    Form<Article> articleForm = formFactory.form(Article.class).fill(data);
+    return ok(article_edit.render(articleForm, id));
   }
 
   public Result add() {
