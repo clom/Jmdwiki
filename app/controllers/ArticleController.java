@@ -1,5 +1,6 @@
 package controllers;
 
+import com.avaje.ebean.Expr;
 import play.mvc.*;
 
 import views.html.*;
@@ -44,6 +45,11 @@ public class ArticleController extends Controller {
     Article article = formFactory.form(Article.class).bindFromRequest().get();
     article.save();
     return redirect("/article/" + article.getArticleId());
+  }
+
+  public Result search(String keyword){
+    List<Article> article = Article.find.where().or(Expr.like("title", "%"+ keyword +"%"), Expr.like("content", "%"+ keyword +"%")).findList();
+    return ok(search.render(article, keyword));
   }
 
   public Result revert() {
