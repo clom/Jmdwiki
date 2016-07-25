@@ -4,6 +4,7 @@ import play.mvc.*;
 
 import views.html.*;
 import models.Article;
+import java.util.*;
 import javax.inject.Inject;
 import play.data.FormFactory;
 import play.data.Form;
@@ -13,7 +14,8 @@ public class ArticleController extends Controller {
   FormFactory formFactory;
 
   public Result index() {
-    return ok(index.render("index"));
+    List<Article> articles = Article.find.all();
+    return ok(article_index.render(articles));
   }
 
   public Result show(int id) {
