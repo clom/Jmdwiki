@@ -46,7 +46,7 @@ GET     /article/:id          controllers.ArticleController.show(id:Int)
 
 DELETE  /article/:id          controllers.ArticleController.destroy(id:Int)
 
-PUT     /article/:id          controllers.ArticleController.update(id:Int)
+POST     /article         controllers.ArticleController.update
 
 GET     /article/:id/edit     controllers.ArticleController.edit(id:Int)
 
