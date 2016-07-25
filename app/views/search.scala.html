@@ -1,7 +1,9 @@
 @(articles: List[Article])(keyword: String)
 
 @main("Search :"+keyword) {
-  <h1>@articles.size article(s)</h1>
+  <h1>Search Result</h1>
+  <h2>Search Words: @keyword</h2>
+  <h3>@articles.size article(s)</h3>
 
   <ul>
   @articles.map { article =>
