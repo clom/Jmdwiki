@@ -15,12 +15,12 @@ public class Article extends Model {
 
   @Id
   @Column(name="article_id")
-  private Long articleId;
+  private Integer articleId;
   @NotNull
   @Column(name="title")
   private String title;
   @NotNull
-  @Column(name="content")
+  @Column(name="content",columnDefinition = "TEXT")
   private String content;
   @UpdatedTimestamp
   @Column(name="modify_time")
@@ -42,7 +42,7 @@ public class Article extends Model {
     return content;
   }
 
-  public Long getArticleId() {
+  public Integer getArticleId() {
     return articleId;
   }
 
@@ -54,6 +54,6 @@ public class Article extends Model {
     this.content = content;
   }
 
-  public static final Find<Long,Article> find = new Find<Long,Article>(){};
+  public static final Find<Integer,Article> find = new Find<Integer,Article>(){};
 
 }
