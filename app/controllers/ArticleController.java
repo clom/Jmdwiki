@@ -46,7 +46,13 @@ public class ArticleController extends Controller {
   }
 
   public Result destroy(int id) {
-    return ok();
+
+
+    Article article = Article.find.byId(id);
+    article.delete();
+    List<Article> articles = Article.find.all();
+    return ok(article_index.render(articles));
+
   }
 
   public Result create() {

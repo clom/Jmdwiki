@@ -7,4 +7,9 @@
         @helper.textarea(articleForm("content"), 'rows -> 10, 'cols -> 50)
         <button type="submit">更新</button>
     }
+    @helper.form(action = routes.ArticleController.destroy(id)){
+
+        <button type="submit">削除</button>
+    }
+
 }
