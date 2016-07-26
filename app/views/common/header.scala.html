@@ -14,12 +14,14 @@
 
       <div class="collapse navbar-collapse">
         <div class="navbar-left">
-          <form class="form-inline" action="@routes.ArticleController.search()" method="get">
-            <div class="form-group">
-              <input type="text" class="form-control" name="name" placeholder="Search">
-            </div>
-            <button type="submit" class="btn btn-info">Search</button>
-          </form>
+          <div class="navbar-form">
+            <form class="form-inline" action="@routes.ArticleController.search()" method="get">
+              <div class="form-group">
+                <input type="text" class="form-control" name="name" placeholder="Search">
+              </div>
+              <button type="submit" class="btn btn-inverse">Search</button>
+            </form>
+          </div>
         </div>
         <div class="navbar-right">
           <span><a href="@routes.ArticleController.add()" class="navbar-brand">New</a></span>

@@ -2,8 +2,7 @@
 
 @main("Search :"+keyword) {
   <h1>Search Result</h1>
-  <h2>Search Words: @keyword</h2>
-  <h3>@articles.size article(s)</h3>
+  <h4>Search Words: @keyword : @articles.size article(s)</h4>
 
   <ul>
   @articles.map { article =>
