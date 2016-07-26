@@ -30,14 +30,13 @@ public class ArticleController extends Controller {
   }
 
   public Result add() {
-    Form<Article> articleForm = formFactory.form(Article.class);
+		Form<Article> articleForm = formFactory.form(Article.class);
     return ok(article_add.render(articleForm));
   }
 
-  public Result update() {
+  public Result update(int id) {
 
-
-    Article article = formFactory.form(Article.class).bindFromRequest().get();
+    Article article = Article.find.byId(id);
     article.update();
     return redirect("/article/" + article.getArticleId());
   }
