@@ -1,0 +1,14 @@
+@(articles: List[Article])(keyword: String)
+
+@main("Search :"+keyword) {
+  <h1>Search Result</h1>
+  <h4>Search Words: @keyword : @articles.size article(s)</h4>
+
+  <ul>
+  @articles.map { article =>
+    <li>
+      <a href="@routes.ArticleController.show(article.getArticleId())">@article.getTitle()</a>
+    </li>
+  }
+  </ul>
+}
