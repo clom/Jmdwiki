@@ -56,4 +56,5 @@ public class Article extends Model {
 
   public static final Find<Integer,Article> find = new Find<Integer,Article>(){};
 
+
 }

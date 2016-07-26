@@ -36,8 +36,12 @@ public class ArticleController extends Controller {
 
   public Result update(int id) {
 
+    Article request = formFactory.form(Article.class).bindFromRequest().get();
     Article article = Article.find.byId(id);
+    article.setTitle(request.getTitle());
+    article.setContent(request.getContent());
     article.update();
+
     return redirect("/article/" + article.getArticleId());
   }
 
