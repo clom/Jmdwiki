@@ -50,9 +50,9 @@ public class User extends Model {
 
     public static final Find<Long, User> find = new Find<Long, User>(){};
 
-    public static User authenticate(String name, String passwordDigest) {
+    public static User authenticate(String name, String password) {
         return find.where().eq("name", name)
-            .eq("passwordDigest", passwordDigest).findUnique();
+            .eq("password", password).findUnique();
     }
 
 }
