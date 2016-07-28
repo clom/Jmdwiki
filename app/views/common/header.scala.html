@@ -24,7 +24,13 @@
           </div>
         </div>
         <div class="navbar-right">
-          <span><a href="@routes.ArticleController.add()" class="navbar-brand">New</a></span>
+          @if(session().isDefinedAt("login")){
+            <span><p class="navbar-brand">@session().get("name")さん</p></span>
+            <span><a href="@routes.ArticleController.add()" class="navbar-brand">New</a></span>
+            <span><a href="@routes.LogoutController.logout()" class="navbar-brand">Logout</a></span>
+          } else {
+            <span><a href="@routes.LoginController.login()" class="navbar-brand">Login</a></span>
+          }
         </div>
       </div>
     </div>
