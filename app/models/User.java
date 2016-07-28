@@ -22,30 +22,30 @@ public class User extends Model {
     public String name;
 
     @NotNull
-    public String passwordDigest;
+    public String password;
 
     public User() {
     }
 
-    public User(String name, String passwordDigest) {
+    public User(String name, String password) {
         this.name = name;
-        this.passwordDigest = passwordDigest;
+        this.password = password;
     }
 
     public String getName() {
         return name;
     }
 
-    public String getPasswordDigest() {
-        return passwordDigest;
+    public String getPassword() {
+        return password;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setPasswordDigest(String passwordDigest) {
-        this.passwordDigest = passwordDigest;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public static final Find<Long, User> finder = new Find<Long, User>(){};
