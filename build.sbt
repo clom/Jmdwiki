@@ -12,7 +12,10 @@ libraryDependencies ++= Seq(
   javaWs,
   javaCore,
   "mysql" % "mysql-connector-java" % "5.1.39",
-  evolutions
+  evolutions,
+  "com.adrianhurt" %% "play-bootstrap" % "1.1-P25-B3-SNAPSHOT"
 )
+
+resolvers += "Sonatype OSS Snapshots" at "https://oss.sonatype.org/content/repositories/snapshots/"
 
 javaOptions in Test += "-Dconfig.file=conf/application.test.conf"
