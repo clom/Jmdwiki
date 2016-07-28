@@ -48,6 +48,11 @@ public class User extends Model {
         this.password = password;
     }
 
-    public static final Find<Long, User> finder = new Find<Long, User>(){};
+    public static final Find<Long, User> find = new Find<Long, User>(){};
+
+    public static User authenticate(String name, String password) {
+        return find.where().eq("name", name)
+            .eq("password", password).findUnique();
+    }
 
 }
