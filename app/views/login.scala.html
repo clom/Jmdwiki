@@ -1,4 +1,10 @@
-@(title: String)
+@(loginForm: Form[User])(title: String)
 
 @main(title) {
+    <h1>Login</h1>
+    @helper.form(action = routes.LoginController.login()){
+        @helper.inputText(loginForm("username"))
+        @helper.inputPassword(loginForm("password"))
+        <button type="submit">Login</button>
+    }
 }
