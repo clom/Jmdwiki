@@ -25,7 +25,9 @@ public class ArticleController extends Controller {
   }
 
   public Result edit(int id) {
-    return ok(article_edit.render("edit"));
+    Article data = Article.find.byId(id);
+    Form<Article> articleForm = formFactory.form(Article.class).fill(data);
+    return ok(article_edit.render(articleForm, id));
   }
 
   public Result add() {
@@ -34,7 +36,14 @@ public class ArticleController extends Controller {
   }
 
   public Result update(int id) {
-    return ok();
+
+    Article request = formFactory.form(Article.class).bindFromRequest().get();
+    Article article = Article.find.byId(id);
+    article.setTitle(request.getTitle());
+    article.setContent(request.getContent());
+    article.update();
+
+    return redirect("/article/" + article.getArticleId());
   }
 
   public Result destroy(int id) {

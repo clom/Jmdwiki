@@ -1,4 +1,10 @@
-@(title: String)
+@(articleForm: Form[Article])(id:Int)
 
-@main(title) {
+@main("edit") {
+    <h1>編集</h1>
+        @helper.form(action = routes.ArticleController.update(id)){
+        @helper.inputText(articleForm("title"))
+        @helper.textarea(articleForm("content"), 'rows -> 10, 'cols -> 50)
+        <button type="submit">更新</button>
+    }
 }
