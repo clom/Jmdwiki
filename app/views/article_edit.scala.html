@@ -1,10 +1,13 @@
 @(articleForm: Form[Article])(id:Int)
 
+    @import b3.vertical.fieldConstructor
+
 @main("edit") {
     <h1>編集</h1>
-        @helper.form(action = routes.ArticleController.update(id)){
-        @helper.inputText(articleForm("title"))
-        @helper.textarea(articleForm("content"), 'rows -> 10, 'cols -> 50)
-        <button type="submit">更新</button>
+    @b3.form(routes.ArticleController.update(id)){
+        @b3.text(articleForm("title"),'_label -> "title", 'placeholder -> "title")
+        @b3.textarea( articleForm("content"), '_label -> "content", 'rows -> 10, 'cols -> 50)
+        @b3.submit('class -> "btn btn-inverse"){ <span class="glyphicon glyphicon-save-file"></span> 更新 }
     }
+
 }
