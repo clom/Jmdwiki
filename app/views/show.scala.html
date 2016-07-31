@@ -1,6 +1,7 @@
-@(title: String)(content: String)
+@(id: Integer)(title: String)(content: String)
 
 @main(title) {
+    <a href="@routes.ArticleController.edit(id)">edit</a>
     <h1>@title</h1>
     <hr>
     <script>
