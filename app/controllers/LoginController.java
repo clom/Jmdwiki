@@ -25,9 +25,16 @@ public class LoginController extends Controller {
     if(loginForm.hasErrors()){
       return badRequest(login.render(loginForm, "login"));
     }
-    session().clear();
-    session("name", loginForm.get().name);
-    session("login", "true");
+    try {
+      User result = User.authenticate(loginForm.get().getName(), loginForm.get().getPassword());
+      if(!result.getName().isEmpty()) {
+        session().clear();
+        session("name", loginForm.get().name);
+        session("login", "true");
+      }
+    } catch (java.lang.NullPointerException e){
+      session().clear();
+    }
     return redirect(routes.ArticleController.index());
 
 
