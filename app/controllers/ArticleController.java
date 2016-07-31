@@ -57,9 +57,14 @@ public class ArticleController extends Controller {
   }
 
   public Result create() {
-    Article article = formFactory.form(Article.class).bindFromRequest().get();
-    article.save();
-    return redirect("/article/" + article.getArticleId());
+    Form<Article> requestForm = formFactory.form(Article.class).bindFromRequest();
+    if(requestForm.hasErrors()){
+      return ok(article_add.render(requestForm));
+    }else{
+      Article article = requestForm.get();
+      article.save();
+      return redirect("/article/" + article.getArticleId());
+    }
   }
 
   public Result search(String keyword){
