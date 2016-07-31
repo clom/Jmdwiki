@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
 
 import static org.junit.Assert.assertTrue;
 import static play.test.Helpers.*;
@@ -98,8 +99,21 @@ public class UserTest {
         public void run() {
             User actual = new User("mayok", "hoge");
             actual.save();
-            User expect = User.finder.where().eq("name","mayok").findUnique();
+            User expect = User.find.where().eq("name","mayok").findUnique();
             assertEquals(actual.getName(), expect.getName());
+        }
+      });
+    }
+
+    @Test
+    public void tryeAuthenticateUser() {
+      running(fakeApplication(), new Runnable() {
+        public void run() {
+          new User("bob", "pass").save();
+
+          assertNotNull(User.authenticate("bob", "pass"));
+          assertNull(User.authenticate("bob", "invalid"));
+          assertNull(User.authenticate("tom", "pass"));
         }
       });
     }
