@@ -8,6 +8,8 @@ import javax.validation.constraints.NotNull;
 import com.avaje.ebean.*;
 import com.avaje.ebean.annotation.UpdatedTimestamp;
 
+import play.data.validation.Constraints.Required;
+
 import java.util.Date;
 
 @Entity
@@ -17,6 +19,7 @@ public class Article extends Model {
   @Column(name="article_id")
   private Integer articleId;
   @NotNull
+  @Required(message = "titleを入力してください")
   @Column(name="title")
   private String title;
   @NotNull

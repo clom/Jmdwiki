@@ -4,8 +4,15 @@
 
 @main("Jmdwiki") {
 	<h1>新規作成</h1>
+  @if(articleForm.hasGlobalErrors) {
+    <p class="error">
+      @for(error <- articleForm.globalErrors) {
+        <p>@Messages(error.messages, error.arguments.toArray: _*)</p>
+      }
+    </p>
+  }
     @b3.form(routes.ArticleController.create()){
-        @b3.text(articleForm("title"),'_label -> "title", 'placeholder -> "title")
+        @b3.text(articleForm("title"),'_label -> "title", '_showConstraints -> false, 'placeholder -> "title")
         @b3.textarea( articleForm("content"), '_label -> "content", 'rows -> 10)
         @b3.submit('class -> "btn btn-inverse"){ <span class="glyphicon glyphicon-save-file"></span> 作成 }
     }
