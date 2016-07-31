@@ -27,7 +27,7 @@ public class UserController extends Controller {
   public Result create() {
     User user = formFactory.form(User.class).bindFromRequest().get();
     user.save();
-    return redirect("/");
+    return redirect(routes.ArticleController.index());
   }
 
   public Result update(Long id) {
@@ -37,13 +37,13 @@ public class UserController extends Controller {
     user.setPassword(request.getPassword());
     user.update();
 
-    return redirect("/");
+    return redirect(routes.ArticleController.index());
   }
 
   public Result destroy(Long id) {
     User user = User.find.byId(id);
     user.delete();
     session().clear();
-    return redirect("/");
+    return redirect(routes.ArticleController.index());
   }
 }
