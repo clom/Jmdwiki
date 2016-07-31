@@ -2,8 +2,11 @@
 
 @main(title) {
     <h1>Login</h1>
-    @helper.form(action = routes.LoginController.login()){
-        @helper.inputText(loginForm("username"))
+    @for(error <- loginForm("name").errors) {
+        <p>@Messages(error.message)</p>
+    }
+    @helper.form(action = routes.LoginController.auth()){
+        @helper.inputText(loginForm("name"))
         @helper.inputPassword(loginForm("password"))
         <button type="submit">Login</button>
     }

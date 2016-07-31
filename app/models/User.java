@@ -7,6 +7,7 @@ package models;
 
 
 import com.avaje.ebean.Model;
+import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -19,9 +20,11 @@ public class User extends Model {
     public Long id;
 
     @NotNull
+    @Constraints.Required
     public String name;
 
     @NotNull
+    @Constraints.Required
     public String password;
 
     public User() {

@@ -30,9 +30,9 @@ GET     /user/:id/edit        controllers.UserController.edit(id:Int)
 
 GET     /login                controllers.LoginController.login
 
-POST    /login                controllers.LoginController.login
+POST    /login                controllers.LoginController.auth
 
-POST    /logout               controllers.LogoutController.logout
+GET    /logout               controllers.LogoutController.logout
 
 
 
