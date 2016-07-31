@@ -20,9 +20,9 @@ POST    /user                 controllers.UserController.create
 
 GET     /user/new             controllers.UserController.add
 
-POST    /user/:id             controllers.UserController.destroy(id:Long)
+POST    /user/:id/delete      controllers.UserController.destroy(id:Long)
 
-POST    /user/:id             controllers.UserController.update(id:Long)
+POST    /user/:id/update      controllers.UserController.update(id:Long)
 
 GET     /user/:id/edit        controllers.UserController.edit(id:Long)
 
@@ -44,9 +44,9 @@ GET     /article/new          controllers.ArticleController.add
 
 GET     /article/:id          controllers.ArticleController.show(id:Int)
 
-POST  /article/:id          controllers.ArticleController.destroy(id:Int)
+POST    /article/:id/delete   controllers.ArticleController.destroy(id:Int)
 
-POST     /article/:id          controllers.ArticleController.update(id:Int)
+POST    /article/:id/update   controllers.ArticleController.update(id:Int)
 
 GET     /article/:id/edit     controllers.ArticleController.edit(id:Int)
 
