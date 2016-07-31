@@ -4,9 +4,13 @@
 
     @main(title) {
         <h2>ユーザ編集</h2>
-        @b3.form(routes.UserController.create()){
+        @b3.form(routes.UserController.update(Long.parseLong(session().get("id")))) {
             @b3.text( userForm("name"),'_label -> "Username", 'placeholder -> "Username")
             @b3.password( userForm("password"), '_label -> "New Password")
-            @b3.submit('class -> "btn btn-info"){ 登録 }
+            @b3.submit('class -> "btn btn-info"){ 編集 }
+        }
+
+        @b3.form(routes.UserController.destroy(Long.parseLong(session().get("id")))) {
+            @b3.submit('class -> "btn btn-danger") { <span class="glyphicon glyphicon-save-file"></span> 削除 }
         }
     }
