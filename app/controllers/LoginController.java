@@ -30,6 +30,7 @@ public class LoginController extends Controller {
       if(!result.getName().isEmpty()) {
         session().clear();
         session("name", loginForm.get().name);
+        session("id", result.id.toString());
         session("login", "true");
       }
     } catch (java.lang.NullPointerException e){
