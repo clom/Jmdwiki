@@ -1,13 +1,19 @@
 @(articles: List[Article])
 
 @main("index") {
-<h1>@articles.size article(s)</h1>
 
-<ul>
-  @articles.map { article =>
-  <li>
-    <a href="@routes.ArticleController.show(article.getArticleId())">@article.getTitle()</a>
-  </li>
+  @if(session().isDefinedAt("login")){
+    <h1>@articles.size article(s)</h1>
+    <ul>
+      @articles.map { article =>
+      <li>
+        <a href="@routes.ArticleController.show(article.getArticleId())">@article.getTitle()</a>
+      </li>
+      }
+    </ul>
+  } else {
+    <div class="jumbotron">
+      <h1>JmdWiki.</h1>
+    </div>
   }
-</ul>
 }
